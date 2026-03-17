@@ -1,3 +1,11 @@
+/**
+ * File : Persegi.java
+ * deskripsi : Program untuk membuat class Persegi extends BangunDatar
+ * nama : Anggita Kirana Puspa
+ * tanggal : 16 Maret 2026
+ */
+
+
 public class Persegi extends BangunDatar
 {
     private double sisi;

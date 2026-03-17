@@ -1,3 +1,11 @@
+/**
+ * File : Main.java
+ * deskripsi : Program untuk membuat Main untuk BangunDatar dan anak-anaknya
+ * nama : Anggita Kirana Puspa
+ * tanggal : 16 Maret 2026
+ */
+
+
 public class Main {
     public static void main(String[] args)
     {

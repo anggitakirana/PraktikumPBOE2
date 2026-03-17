@@ -1,3 +1,10 @@
+/**
+ * File : BangunDatar.java
+ * deskripsi : Program untuk membuat parent class BangunDatar
+ * nama : Anggita Kirana Puspa
+ * tanggal : 16 Maret 2026
+ */
+
 public class BangunDatar
 {
     // Menggunakan protected agar bisa diakses langsung oleh kelas turunannya (Bagian 4)

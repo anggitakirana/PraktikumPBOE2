@@ -1,3 +1,10 @@
+/**
+ * File : Lingkaran.java
+ * deskripsi : Program untuk membuat class Lingkaran extends BangunDatar
+ * nama : Anggita Kirana Puspa
+ * tanggal : 16 Maret 2026
+ */
+
 public class Lingkaran extends BangunDatar
 {
     private double jari;
