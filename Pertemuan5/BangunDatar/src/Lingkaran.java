@@ -8,13 +8,24 @@
 
 public class Lingkaran extends BangunDatar implements IResize
 {
+    // Atribut
     private double jari;
 
-    public Lingkaran(double jari)
+    // Method
+    // Konstruktor tanpa parameter
+    public Lingkaran(){
+        super();
+        setJmlSisi(0);
+    }
+
+    // Konstruktor dengan parameter jari-jari
+    public Lingkaran(double jari, String warna, String border)
     {
+        super(0, warna, border);
         this.jari = jari;
     }
 
+    // Getter & Setter
     public double getJari()
     {
         return jari;
@@ -37,6 +48,7 @@ public class Lingkaran extends BangunDatar implements IResize
         return 2 * Math.PI * jari;
     }
 
+    // Override interface IResize
     @Override
     public void zoomIn(){
         this.jari = this.jari * 1.1;
@@ -52,11 +64,11 @@ public class Lingkaran extends BangunDatar implements IResize
         this.jari = this.jari * (percent/ 100.0);
     }
 
+    // Cetak Info
     @Override
     public void printInfo()
     {
-        System.out.println("Jari-jari: " + getJari());
-        System.out.println("Warna: " + warna);
-        System.out.println("Border: " + border);
+        super.printInfo();
+        System.out.println("Jari-jari\t: " + getJari());
     }
 }

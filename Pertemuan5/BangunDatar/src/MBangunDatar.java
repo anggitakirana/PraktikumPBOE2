@@ -12,10 +12,10 @@ public class MBangunDatar {
     {   
         // BangunDatar B1 = new BangunDatar();
         // Demo Persegi
-        BangunDatar P1 = new Persegi(10);
-        Persegi P2 = new Persegi(5);
-        BangunDatar L1 = new Lingkaran(7);
-        Lingkaran L2 = new Lingkaran(14);
+        BangunDatar P1 = new Persegi(10, "Merah", "Hitam");
+        Persegi P2 = new Persegi(5, "Biru", "Ungu");
+        BangunDatar L1 = new Lingkaran(7, "Biru", "Putih");
+        Lingkaran L2 = new Lingkaran(14, "Merah", "Putih");
 
         System.out.println("\n============ INFORMASI PERSEGI 1===============");
         P1.warna = "Merah";

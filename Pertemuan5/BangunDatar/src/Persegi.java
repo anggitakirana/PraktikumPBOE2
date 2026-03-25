@@ -9,13 +9,24 @@
 
 public class Persegi extends BangunDatar implements IResize
 {
+    // ATRIBUT
     private double sisi;
 
-    public Persegi(double sisi)
+    // METHOD
+    // KONSTRUKTOR TANPA PARAMETER
+    public Persegi(){
+        super();
+        setJmlSisi(4);
+    }
+
+    // KONSTRUKTOR DENGAN PARAMETER
+    public Persegi(double sisi, String warna, String border)
     {
+        super(4, warna, border);
         this.sisi = sisi;
     }
 
+    // Getter & Setter
     public double getSisi()
     {
         return sisi;
@@ -43,6 +54,7 @@ public class Persegi extends BangunDatar implements IResize
         return sisi * Math.sqrt(2);
     }
 
+    // Override interface IResize
     @Override
     public void zoomIn(){
         this.sisi = this.sisi * 1.1;
@@ -58,11 +70,11 @@ public class Persegi extends BangunDatar implements IResize
         this.sisi = this.sisi * (percent / 100.0);
     }
 
+    // Cetak Info
     @Override
     public void printInfo()
     {
-        System.out.println("Sisi: " + getSisi());
-        System.out.println("Warna: " + warna);
-        System.out.println("Border: " + border);
+        super.printInfo();
+        System.out.println("Sisi\t: " + getSisi());
     }
 }

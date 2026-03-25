@@ -18,14 +18,22 @@ public abstract class Manusia {
     protected LocalDate tgl_mulai_kerja;
     protected String alamat;
     protected double pendapatan;
-    protected static int counterMns;
+    protected static int counterMns = 0;
 
     /* METHOD */
-    // Konstruktor
-    public Manusia (String nama, String tanggalMulaiKerja, String alamat, double pendapatan){
+    // Konstruktor tanpa parameter
+    public Manusia(){
+        this.nama = "";
+        this.tgl_mulai_kerja = LocalDate.now();
+        this.alamat = "";
+        this.pendapatan = 0.0;
+        counterMns++;
+    }
+
+    // Konstruktor dengan parameter
+    public Manusia (String nama, LocalDate tanggalMulaiKerja, String alamat, double pendapatan){
         this.nama = nama;
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy", new Locale("id", "ID"));
-        this.tgl_mulai_kerja = LocalDate.parse(tanggalMulaiKerja, formatter);
+        this.tgl_mulai_kerja = tanggalMulaiKerja;
         this.alamat = alamat;
         this.pendapatan = pendapatan;
         counterMns++;
@@ -69,13 +77,6 @@ public abstract class Manusia {
         this.pendapatan = pendapatan;
     }
 
-    public void cetakInfo(){
-        System.out.println("Nama\t: " + getNama());
-        System.out.println("Tanggal Mulai Kerja\t: " + getTanggalMulaiKerja());
-        System.out.println("Alamat\t: " + getAlamat());
-        System.out.println("Pendapatan\t: " + getPendapatan());
-    }
-
     // method untuk formatTanggal
     public String formatTanggal (LocalDate tanggal) {
         DateTimeFormatter formatter =
@@ -94,5 +95,13 @@ public abstract class Manusia {
         
     }
 
+    public void cetakInfo(){
+        System.out.println("Nama\t: " + getNama());
+        System.out.println("Tanggal Mulai Kerja\t: " + formatTanggal(getTanggalMulaiKerja()));
+        System.out.println("Alamat\t: " + getAlamat());
+        System.out.println("Pendapatan\t: " + printRupiah(getPendapatan()));
+    }
+
+    // method abstract
     public abstract int hitungMasaKerja();
 }

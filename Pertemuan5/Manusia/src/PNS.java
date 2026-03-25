@@ -15,8 +15,15 @@ public class PNS extends Manusia implements Pajak{
     private static int counterPNS;
     
     /* METHOD */
-    // Konstruktor
-    public PNS(String nama, String tanggalMulaiKerja, String alamat, double pendapatan, String NIP){
+    // Konstruktor tanpa parameter
+    public PNS (){
+        super();
+        this.nip = "";
+        counterPNS++;
+    }
+
+    // Konstruktor dengan parameter
+    public PNS(String nama, LocalDate tanggalMulaiKerja, String alamat, double pendapatan, String NIP){
         super(nama, tanggalMulaiKerja, alamat, pendapatan);
         this.nip = NIP;
         counterPNS++;
@@ -46,16 +53,15 @@ public class PNS extends Manusia implements Pajak{
 
     @Override
     public double hitungPajak(){
-        return 0.01 * getPendapatan();
+        return 0.10 * getPendapatan();
     }
 
     @Override
     public void cetakInfo(){
-        System.out.println("Nama\t: " + getNama());
-        System.out.println("Tanggal Mulai Kerja\t: " + formatTanggal(getTanggalMulaiKerja()));
-        System.out.println("Alamat\t: " + getAlamat());
-        System.out.println("Pendapatan\t: " + printRupiah(getPendapatan()));
+        super.cetakInfo();
         System.out.println("NIP\t: " + getNIP());
+        System.out.println("Masa Kerja\t: " + hitungMasaKerja());
+        System.out.println("Pajak\t: " + hitungPajak());
     }
 
 }

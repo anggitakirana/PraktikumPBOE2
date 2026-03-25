@@ -9,12 +9,62 @@
 public abstract class BangunDatar
 {
     // Menggunakan protected agar bisa diakses langsung oleh kelas turunannya (Bagian 4)
-    // protected int jmlSisi;
     /* ATRIBUT */
+    protected int jmlSisi;
     protected String warna;
     protected String border;
+    protected static int counterBangunDatar = 0;
 
     /* METHOD */
+    // Konstruktor tanpa paramater
+    public BangunDatar()
+    {
+        this.jmlSisi = 0;
+        this.warna = "";
+        this.border = "";
+        counterBangunDatar++;
+    }
+
+    // Konstruktor dengan paramater
+    public BangunDatar(int jmlSisi, String warna, String border)
+    {
+        this.jmlSisi = jmlSisi;
+        this.warna = warna;
+        this.border = border;
+        counterBangunDatar++;
+    }
+
+    // Getter & Setter
+    public int getJmlSisi()
+    {
+        return jmlSisi;
+    }
+
+    public void setJmlSisi(int jmlSisi)
+    {
+        this.jmlSisi = jmlSisi;
+    }
+    
+    public String getWarna()
+    {
+        return warna;
+    }
+
+    public void setWarna(String warna)
+    {
+        this.warna = warna;
+    }
+    
+    public String getBorder()
+    {
+        return border;
+    }
+
+    public void setBorder(String border)
+    {
+        this.border = border;
+    }
+
     // Tambahan abstract method
     public abstract double getLuas();
 
@@ -31,13 +81,8 @@ public abstract class BangunDatar
 
     public void printInfo()
     {
-        System.out.println("Warna: " + warna);
-        System.out.println("Border: " + border);
+        System.out.println("Jumlahsisi\t: " + getJmlSisi());
+        System.out.println("Warna\t: " + getWarna());
+        System.out.println("Border\t: " + getBorder());
     }
-
-    // public static void printCounterBangunDatar()
-    // {
-    //     System.out.println("Jumlah Objek Bangun Datar: " + counterBangunDatar);
-    // }
-
 }
