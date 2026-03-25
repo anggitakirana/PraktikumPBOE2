@@ -15,12 +15,20 @@ public class Petani extends Manusia implements Pajak{
     private static int counterPetani;
     
     /* METHOD */
-    // Konstruktor
-    public Petani(String nama, String tanggalMulaiKerja, String alamat, double pendapatan, String asalKota){
+    // Konstruktor tanpa parameter
+    public Petani () {
+        super();
+        this.asal_kota = "";
+        counterPetani++;
+    }
+
+    // Konstruktor dengan parameter
+    public Petani(String nama, LocalDate tanggalMulaiKerja, String alamat, double pendapatan, String asalKota){
         super(nama, tanggalMulaiKerja, alamat, pendapatan);
         this.asal_kota = asalKota;
         counterPetani++;
     }
+    
     // Selektor
     public String getAsalKota(){
         return asal_kota;
@@ -51,10 +59,9 @@ public class Petani extends Manusia implements Pajak{
 
     @Override
     public void cetakInfo(){
-        System.out.println("Nama\t: " + getNama());
-        System.out.println("Tanggal Mulai Kerja\t: " + formatTanggal(getTanggalMulaiKerja()));
-        System.out.println("Alamat\t: " + getAlamat());
-        System.out.println("Pendapatan\t: " + printRupiah(getPendapatan()));
+        super.cetakInfo();
         System.out.println("Asal Kota\t: " + getAsalKota());
+        System.out.println("Masa Kerja\t: " + hitungMasaKerja());
+        System.out.println("Pajak\t: " + hitungPajak());
     }
 }

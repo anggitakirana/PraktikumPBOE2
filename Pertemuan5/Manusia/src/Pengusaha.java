@@ -15,8 +15,15 @@ public class Pengusaha extends Manusia implements Pajak{
     private static int counterPengusaha;
     
     /* METHOD */
-    // Konstruktor
-    public Pengusaha (String nama, String tanggalMulaiKerja, String alamat, double pendapatan, String NPWP){
+    // Konstruktor tanpa parameter
+    public Pengusaha(){
+        super();
+        this.npwp = "";
+        counterPengusaha++;
+    }
+
+    // Konstruktor dengan parameter
+    public Pengusaha (String nama, LocalDate tanggalMulaiKerja, String alamat, double pendapatan, String NPWP){
         super(nama, tanggalMulaiKerja, alamat, pendapatan);
         this.npwp = NPWP;
         counterPengusaha++;
@@ -52,10 +59,9 @@ public class Pengusaha extends Manusia implements Pajak{
 
     @Override
     public void cetakInfo(){
-        System.out.println("Nama\t: " + getNama());
-        System.out.println("Tanggal Mulai Kerja\t: " + formatTanggal(getTanggalMulaiKerja()));
-        System.out.println("Alamat\t: " + getAlamat());
-        System.out.println("Pendapatan\t: " + printRupiah(getPendapatan()));
+        super.cetakInfo();
         System.out.println("NPWP\t: " + getNPWP());
+        System.out.println("Masa Kerja\t: " + hitungMasaKerja());
+        System.out.println("Pajak\t: " + hitungPajak());
     }
 }
