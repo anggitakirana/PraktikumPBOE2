@@ -17,7 +17,7 @@ public abstract class BangunDatar
 
     /* METHOD */
     // Konstruktor tanpa paramater
-    public BangunDatar()
+    protected BangunDatar()
     {
         this.jmlSisi = 0;
         this.warna = "";
@@ -26,7 +26,7 @@ public abstract class BangunDatar
     }
 
     // Konstruktor dengan paramater
-    public BangunDatar(int jmlSisi, String warna, String border)
+    protected BangunDatar(int jmlSisi, String warna, String border)
     {
         this.jmlSisi = jmlSisi;
         this.warna = warna;

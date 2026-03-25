@@ -22,7 +22,7 @@ public abstract class Manusia {
 
     /* METHOD */
     // Konstruktor tanpa parameter
-    public Manusia(){
+    protected Manusia(){
         this.nama = "";
         this.tgl_mulai_kerja = LocalDate.now();
         this.alamat = "";
@@ -31,7 +31,7 @@ public abstract class Manusia {
     }
 
     // Konstruktor dengan parameter
-    public Manusia (String nama, LocalDate tanggalMulaiKerja, String alamat, double pendapatan){
+    protected Manusia (String nama, LocalDate tanggalMulaiKerja, String alamat, double pendapatan){
         this.nama = nama;
         this.tgl_mulai_kerja = tanggalMulaiKerja;
         this.alamat = alamat;
